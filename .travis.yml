@@ -1,0 +1,6 @@
+sudo: false
+before_install:
+  - git clone https://github.com/sstephenson/bats.git
+  - git -C bats checkout v0.4.0
+script:
+  - bats/bin/bats test
