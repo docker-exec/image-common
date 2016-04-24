@@ -29,7 +29,7 @@ function dexec_setup() {
 }
 
 function dexec_build() {
-    dexec_build_name=$(echo ${dexec_sources[0]} | sed -E "s/\..*$//")
+    dexec_build_name=$(echo ${dexec_sources[0]} | sed -E "s/(.*\/)?(.*)\..*$/\2/")
     ${dexec_compiler} "${dexec_build_args[@]}" "${dexec_sources[@]}"
 }
 
